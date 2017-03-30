@@ -41,7 +41,7 @@ Module DeploymentController
         If SwinGame.KeyTyped(KeyCode.VK_ESCAPE) Then
             AddNewState(GameState.ViewingGameMenu)
         End If
-
+        'BUG the ship did not change its direction when press button (up, down, left, right)
         If SwinGame.KeyTyped(KeyCode.VK_UP) Or SwinGame.KeyTyped(KeyCode.VK_DOWN) Then
             _currentDirection = Direction.UpDown
         End If
