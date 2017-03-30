@@ -88,7 +88,7 @@ Module DeploymentController
         mouse = SwinGame.MousePosition()
 
         'Calculate the row/col clicked
-        'TODO
+        'BUG
         Dim row, col As Integer
         row = Convert.ToInt32(Math.Floor((mouse.Y) / (CELL_HEIGHT + CELL_GAP)))
         col = Convert.ToInt32(Math.Floor((mouse.X - FIELD_LEFT) / (CELL_WIDTH + CELL_GAP)))
