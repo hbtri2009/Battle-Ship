@@ -14,7 +14,8 @@ Module GameLogic
             DrawScreen()
         Loop Until SwinGame.WindowCloseRequested() = True Or CurrentState = GameState.Quitting
         
-        //TODO: (Stop the music) when user play the game, the sound still playing.
+        'BUGME: (Stop the music) when user play the game, the sound still playing.
+        'TODO: OPTION BUTTON, TURN OF SOUND IF USER WANT
         SwinGame.StopMusic()
 
         'Free Resources and Close Audio, to end the program.
