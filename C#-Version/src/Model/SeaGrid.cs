@@ -19,7 +19,7 @@ public class SeaGrid : ISeaGrid
 	private const int _WIDTH = 10;
 
 	private const int _HEIGHT = 10;
-	private Tile [,] _GameTiles;// = new Tile[Width, Height];
+	private Tile[,] _GameTiles;// = new Tile[Width, Height];
 	private Dictionary<ShipName, Ship> _Ships;
 
 	private int _ShipsKilled = 0;	
@@ -59,7 +59,7 @@ public class SeaGrid : ISeaGrid
 	/// <param name="x">x coordinate of the tile</param>
 	/// <param name="y">y coordiante of the tile</param>
 	/// <returns></returns>
-	public TileView this [int x, int y] {
+	public TileView this[int x, int y] {
 		get { return _GameTiles[x, y].View; }
 	}
 
@@ -84,6 +84,7 @@ public class SeaGrid : ISeaGrid
 	public SeaGrid(Dictionary<ShipName, Ship> ships)
 	{
 		//fill array with empty Tiles
+		_GameTiles = new Tile[Width, Height];
 		int i = 0;
 		for (i = 0; i <= Width - 1; i++) {
 			for (int j = 0; j <= Height - 1; j++) {
