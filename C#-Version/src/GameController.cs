@@ -12,7 +12,7 @@ using SwinGameSDK;
 /// managing user input, and displaying the current state of the
 /// game.
 /// </summary>
-public class GameController
+public static class GameController
 {
 
 	private static BattleShipsGame _theGame;
