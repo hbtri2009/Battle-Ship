@@ -312,25 +312,25 @@ public class GameController
 
 		switch (CurrentState) {
 			case GameState.ViewingMainMenu:
-				UtilityFunctions.DrawMainMenu();
+				MenuController.DrawMainMenu();
 				break;
 			case GameState.ViewingGameMenu:
-				UtilityFunctions.DrawGameMenu();
+				MenuController.DrawGameMenu();
 				break;
 			case GameState.AlteringSettings:
-				UtilityFunctions.DrawSettings();
+				MenuController.DrawSettings();
 				break;
 			case GameState.Deploying:
-				UtilityFunctions.DrawDeployment();
+				DeploymentController.DrawDeployment();
 				break;
 			case GameState.Discovering:
-				UtilityFunctions.DrawDiscovery();
+				DiscoveryController.DrawDiscovery();
 				break;
 			case GameState.EndingGame:
-				UtilityFunctions.DrawEndOfGame();
+				EndingGameController.DrawEndOfGame();
 				break;
 			case GameState.ViewingHighScores:
-				UtilityFunctions.DrawHighScores();
+				HighScoreController.DrawHighScores();
 				break;
 		}
 
