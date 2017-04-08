@@ -149,7 +149,7 @@ static class HighScoreController
 	/// <remarks></remarks>
 	public static void HandleHighScoreInput()
 	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.VK_ESCAPE) || SwinGame.KeyTyped(KeyCode.VK_RETURN)) {
+		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
 			EndCurrentState();
 		}
 	}
@@ -173,7 +173,7 @@ static class HighScoreController
 			Score s = new Score();
 			s.Value = value;
 
-			AddNewState(GameState.ViewingHighScores);
+			GameController.AddNewState(GameState.ViewingHighScores);
 
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameFont("Courier"), "Name: ");

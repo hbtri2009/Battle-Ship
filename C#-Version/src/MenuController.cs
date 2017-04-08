@@ -111,7 +111,7 @@ static class MenuController
 	/// <returns>false if a clicked missed the buttons. This can be used to check prior menus.</returns>
 	private static bool HandleMenuInput(int menu, int level, int xOffset)
 	{
-		if (SwinGame.KeyTyped(KeyCode.VK_ESCAPE)) {
+		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			EndCurrentState();
 			return true;
 		}
@@ -266,10 +266,10 @@ static class MenuController
 				StartGame();
 				break;
 			case MAIN_MENU_SETUP_BUTTON:
-				AddNewState(GameState.AlteringSettings);
+				GameController.AddNewState(GameState.AlteringSettings);
 				break;
 			case MAIN_MENU_TOP_SCORES_BUTTON:
-				AddNewState(GameState.ViewingHighScores);
+				GameController.AddNewState(GameState.ViewingHighScores);
 				break;
 			case MAIN_MENU_QUIT_BUTTON:
 				EndCurrentState();
@@ -315,7 +315,7 @@ static class MenuController
 				//end game
 				break;
 			case GAME_MENU_QUIT_BUTTON:
-				AddNewState(GameState.Quitting);
+				GameController.AddNewState(GameState.Quitting);
 				break;
 		}
 	}

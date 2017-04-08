@@ -10,7 +10,9 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MyGame" expanded="True">
-            <Node name="MyGame" expanded="True" />
+            <Node name="MyGame" expanded="True">
+              <Node name="Resources" expanded="True" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
