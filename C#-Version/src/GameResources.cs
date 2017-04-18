@@ -49,16 +49,16 @@ public static class GameResources
 	{
 		NewSound("Error", "error.wav");
 		NewSound("Hit", "hit.wav");
-		NewSound("Sink", "sink.wav");
+		NewSound("Sink", "destroyed.wav");
 		NewSound("Siren", "siren.wav");
-		NewSound("Miss", "watershot.wav");
+		NewSound("Miss", "misstarget.wav");
 		NewSound("Winner", "winner.wav");
 		NewSound("Lose", "lose.wav");
 	}
 
 	private static void LoadMusic()
 	{
-		NewMusic("Background", "horrordrone.mp3");
+		NewMusic("Background", "underattackalarm.mp3");
 	}
 
 	/// <summary>
