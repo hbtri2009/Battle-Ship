@@ -172,11 +172,7 @@ public static class GameController
 			case ResultOfAttack.GameOver:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
-
-				while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink"))) {
-					SwinGame.Delay(10);
-					SwinGame.RefreshScreen();
-				}
+				SwinGame.Delay (1000);
 
 				if (GameController.HumanPlayer.IsDestroyed) {
 					Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
