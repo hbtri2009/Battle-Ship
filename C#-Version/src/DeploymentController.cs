@@ -27,9 +27,10 @@ static class DeploymentController
 	private const int UP_DOWN_BUTTON_LEFT = 410;
 
 	private const int LEFT_RIGHT_BUTTON_LEFT = 350;
+
 	private const int RANDOM_BUTTON_LEFT = 547;
 
-	private const int RANDOM_BUTTON_WIDTH = 51;
+	private const int RANDOM_BUTTON_WIDTH = 110;
 
 	private const int DIR_BUTTONS_WIDTH = 47;
 
