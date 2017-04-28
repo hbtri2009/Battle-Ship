@@ -9,8 +9,6 @@ using SwinGameSDK;
 
 static class GameLogic
 {
-	static int currentVolume;
-	static float volume;
 	public static void Main()
 	{
 		currentVolume = 1;
@@ -27,30 +25,14 @@ static class GameLogic
 			GameController.HandleUserInput ();
 			GameController.DrawScreen ();
 		//Music volume controll
-			if (SwinGame.KeyTyped (KeyCode.vk_m)) 
+			if (SwinGame.KeyTyped (KeyCode.vk_z)) 
 			{
-				SwinGame.SetMusicVolume (0);
+				SwinGame.SetMusicVolume(0);
 			}
-			if (SwinGame.KeyTyped (KeyCode.vk_UP)) 
-				{
-				if (currentVolume < 10)
-					{
-						currentVolume = currentVolume + 1;
-						volume = currentVolume / 10;
-					}
-
-				SwinGame.SetMusicVolume (volume);
-				}
-			if (SwinGame.KeyTyped (KeyCode.vk_DOWN)) 
-				{
-				if (currentVolume > 0)
-					{
-						currentVolume = currentVolume - 1;
-						volume = currentVolume / 10;
-					}
-
-				SwinGame.SetMusicVolume (volume);
-				}
+			if (SwinGame.KeyTyped (KeyCode.vk_x))
+			{
+				SwinGame.SetMusicVolume(1);
+			}
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 		SwinGame.StopMusic();
