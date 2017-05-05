@@ -48,6 +48,8 @@ static class DeploymentController
 	/// </remarks>
 	public static void HandleDeploymentInput()
 	{
+
+
 		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			GameController.AddNewState(GameState.ViewingGameMenu);
 		}
@@ -70,6 +72,8 @@ static class DeploymentController
 				_selectedShip = selected;
 			} else {
 				DoDeployClick();
+				//if (_currentDirection == Direction.LeftRight)
+					
 			}
 
 			if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
@@ -124,32 +128,41 @@ static class DeploymentController
 	public static void DrawDeployment()
 	{
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
+		string strLR = string.Format ("ShipLR{0}", (int)_selectedShip);
+		string strUD = string.Format ("ShipUD{0}", (int)_selectedShip);
 
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
-			//SwinGame.DrawText("U/D", Color.Gray, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
-			//SwinGame.DrawText("L/R", Color.White, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
+			//SwinGame.DrawText ("U/D", Color.Gray, GameResources.GameFont ("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			//SwinGame.DrawText ("L/R", Color.White, GameResources.GameFont ("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			if(!GameController.HumanPlayer.Ship(_selectedShip).IsDeployed)
+			   SwinGame.DrawBitmap (GameResources.GameImage (strLR), SwinGame.MouseX (), SwinGame.MouseY ());
 		} else {
 			SwinGame.DrawBitmap(GameResources.GameImage("UpDownButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
-			//SwinGame.DrawText("U/D", Color.White, GameFont("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP)
-			//SwinGame.DrawText("L/R", Color.Gray, GameFont("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP)
+			//SwinGame.DrawText ("U/D", Color.White, GameResources.GameFont ("Menu"), UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			//SwinGame.DrawText ("L/R", Color.Gray, GameResources.GameFont ("Menu"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
+			if (!GameController.HumanPlayer.Ship (_selectedShip).IsDeployed)
+				SwinGame.DrawBitmap (GameResources.GameImage (strUD), SwinGame.MouseX (), SwinGame.MouseY ());
 		}
 
 		//DrawShips
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
 			int i = 0;
+
 			i = (int)sn - 1;
 			if (i >= 0) {
 				if (sn == _selectedShip) {
 					SwinGame.DrawBitmap(GameResources.GameImage("SelectedShip"), SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT);
-					//    SwinGame.FillRectangle(Color.LightBlue, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
-					//Else
-					//    SwinGame.FillRectangle(Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
-				}
 
-				//SwinGame.DrawRectangle(Color.Black, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
-				//SwinGame.DrawText(sn.ToString(), Color.Black, GameFont("Courier"), SHIPS_LEFT + TEXT_OFFSET, SHIPS_TOP + i * SHIPS_HEIGHT)
+					//SwinGame.FillRectangle (Color.LightBlue, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT);
+				}
+					//else
+						//SwinGame.FillRectangle (Color.Gray, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT);
+				
+
+			//SwinGame.DrawRectangle (Color.Black, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT);
+			//SwinGame.DrawText (sn.ToString (), Color.Black, GameResources.GameFont ("Courier"), SHIPS_LEFT + TEXT_OFFSET, SHIPS_TOP + i * SHIPS_HEIGHT);
 
 			}
 		}
