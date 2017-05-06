@@ -22,7 +22,10 @@ static class GameLogic
 		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
 		//Game Loop
-		do {
+		do 
+		{
+			GameController.HandleUserInput ();
+			GameController.DrawScreen (); 
 			if (SwinGame.KeyTyped (KeyCode.vk_m)) 
   			{
  				SwinGame.SetMusicVolume (0);
@@ -31,7 +34,7 @@ static class GameLogic
  			{
  				SwinGame.SetMusicVolume(1);
   			}
-
+		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 		SwinGame.StopMusic();
 
 		//Free Resources and Close Audio, to end the program.
