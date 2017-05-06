@@ -20,7 +20,9 @@ static class GameLogic
 		GameResources.LoadResources();
 
 		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
-
+		
+		bool isMuted = false;
+		
 		//Game Loop
 		do 
 		{
@@ -28,12 +30,29 @@ static class GameLogic
 			GameController.DrawScreen (); 
 			if (SwinGame.KeyTyped (KeyCode.vk_m)) 
   			{
- 				SwinGame.SetMusicVolume (0);
+				isMuted = !isMuted;
+				if (isMuted)
+					SwinGame.SetMusicVolume (1);	
+				else
+					SwinGame.SetMusicVolume (0); 				
 			}
- 			if (SwinGame.KeyTyped (KeyCode.vk_u))
- 			{
- 				SwinGame.SetMusicVolume(1);
-  			}
+			
+			if (SwinGame.KeyTyped (KeyCode.vk_KP_PLUS))
+			{
+				if (currentVolume < 1.0) {
+					currentVolume = currentVolume + 0.1;
+				}
+				SwinGame.SetMusicVolume ((float)currentVolume);
+
+			}
+			if (SwinGame.KeyTyped (KeyCode.vk_KP_MINUS))
+			       {
+				if (currentVolume > 0.0) {
+					currentVolume = currentVolume - 0.1;
+				}
+				SwinGame.SetMusicVolume ((float)currentVolume);
+
+			}
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 		SwinGame.StopMusic();
 
