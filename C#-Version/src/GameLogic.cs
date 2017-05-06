@@ -28,9 +28,9 @@ static class GameLogic
 			if (SwinGame.KeyTyped (KeyCode.vk_m)) {
 				isMuted = !isMuted;
 				if (isMuted)
-					SwinGame.SetMusicVolume (1);
-				else
 					SwinGame.SetMusicVolume (0);
+				else
+					SwinGame.SetMusicVolume (1);
 			}
 
 			if (SwinGame.KeyTyped (KeyCode.vk_KP_PLUS)) {
