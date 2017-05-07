@@ -22,12 +22,18 @@ static class DiscoveryController
 	/// </remarks>
 	public static void HandleDiscoveryInput()
 	{
+		const int RANDOM_BUTTON_LEFT = 547;
+		const int TOP_BUTTONS_TOP = 72;
+		const int RANDOM_BUTTON_WIDTH = 110;
+		const int TOP_BUTTONS_HEIGHT = 46;
 		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			GameController.AddNewState(GameState.ViewingGameMenu);
 		}
 
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
-			DoAttack();
+			if (UtilityFunctions.IsMouseInRectangle (RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) 
+				GameController.StartGame ();
+			else DoAttack();
 		}
 	}
 
@@ -64,6 +70,10 @@ static class DiscoveryController
 		const int SHOTS_TOP = 157;
 		const int HITS_TOP = 206;
 		const int SPLASH_TOP = 256;
+		const int RANDOM_BUTTON_LEFT = 547;
+		const int TOP_BUTTONS_TOP = 72;
+
+		SwinGame.DrawBitmap(GameResources.GameImage("RePlay"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
 
 		if (SwinGame.KeyDown(KeyCode.vk_c)) {
 			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, true);
