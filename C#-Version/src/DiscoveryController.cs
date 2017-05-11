@@ -33,7 +33,7 @@ static class DiscoveryController
 		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
 			if (UtilityFunctions.IsMouseInRectangle (RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) 
 				GameController.StartGame ();
-			if(UtilityFunctions.IsMouseInRectangle(20,72,45,45))
+			else if(UtilityFunctions.IsMouseInRectangle(20,72,45,45))
 			{
 				GameController.AddNewState (GameState.ViewingGameMenu);
 			}
@@ -78,6 +78,7 @@ static class DiscoveryController
 		const int TOP_BUTTONS_TOP = 72;
 
 		SwinGame.DrawBitmap(GameResources.GameImage("RePlay"), RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP);
+		SwinGame.DrawBitmap(GameResources.GameImage("ESC"), 20, 72);
 
 		if (SwinGame.KeyDown(KeyCode.vk_c)) {
 			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, true);
@@ -91,7 +92,7 @@ static class DiscoveryController
 		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SHOTS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, HITS_TOP);
 		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_TOP);
-		SwinGame.DrawBitmap(GameResources.GameImage("ESC"), 20, 72);
+		
 
 	}
 

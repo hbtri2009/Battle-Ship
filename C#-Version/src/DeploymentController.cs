@@ -36,7 +36,6 @@ static class DeploymentController
 
 	private const int TEXT_OFFSET = 5;
 
-	private const int ESC_BUTTON_LEFT = 0;
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
@@ -87,9 +86,7 @@ static class DeploymentController
 			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				GameController.HumanPlayer.RandomizeDeployment();
 			}			
-			} else if(UtilityFunctions.IsMouseInRectangle(ESC_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)){
-				GameController.AddNewState (GameState.ViewingGameMenu);
-			}
+			} 
 			
 	}
 
@@ -135,8 +132,7 @@ static class DeploymentController
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
 		string strLR = string.Format ("ShipLR{0}", (int)_selectedShip);
 		string strUD = string.Format ("ShipUD{0}", (int)_selectedShip);
-		//add ESC button
-		SwinGame.DrawBitmap(GameResources.GameImage("ESC"), ESC_BUTTON_LEFT, TOP_BUTTONS_TOP);
+		
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
