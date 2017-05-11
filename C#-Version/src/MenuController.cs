@@ -28,7 +28,7 @@ static class MenuController
 			"SETUP",
 			"SCORES",
 			"QUIT",
-			"FULLSCREEN"
+			"FULLSC"
 		},
 		new string[] {
 			"RETURN",
