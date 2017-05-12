@@ -41,6 +41,12 @@ public enum GameState
 	/// <summary>
 	/// Players are attempting to locate each others ships
 	/// </summary>
+	
+	ViewingInstructions,
+
+	/// <summary>
+	/// The player is altering the game settings
+	/// </summary>
 	Discovering,
 
 	/// <summary>
