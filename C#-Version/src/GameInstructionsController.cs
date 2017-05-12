@@ -14,7 +14,8 @@ static class GameInstructionsController
 		const int INTRUCTIONS_LEFT = 10;
 		const int INTRUCTIONS_GAP = 20;
 		const int INTRUCTIONS_HEADING = 150;
-
+		
+		SwinGame.FillRectangle(Color.Black, 0, 130, 800, 400);
 		SwinGame.DrawText ("Instruction", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING);
 		SwinGame.DrawText ("How to play", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 2);
 		SwinGame.DrawText ("1/Select difficulty", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 4);
