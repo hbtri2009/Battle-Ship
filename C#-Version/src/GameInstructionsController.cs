@@ -27,8 +27,8 @@ static class GameInstructionsController
 		SwinGame.DrawText ("  The first one to sink all the enemy's ships win", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 10);
 		SwinGame.DrawText ("Game Controller", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 12);
 		SwinGame.DrawText ("M to mute the music", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 14);
-		SwinGame.DrawText ("UP ARROW or DOWN ARROW to place your ship vertically", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 16);
-		SwinGame.DrawText ("LEFT ARROW or RIGHT ARROW to place your ship horizontally ", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 17);
+		SwinGame.DrawText ("UP ARROW or DOWN ARROW to place your ship vertically", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 15);
+		SwinGame.DrawText ("LEFT ARROW or RIGHT ARROW to place your ship horizontally ", Color.White, GameResources.GameFont ("Courier"), INTRUCTIONS_LEFT, INTRUCTIONS_HEADING + INTRUCTIONS_GAP * 16);
 
 
 
