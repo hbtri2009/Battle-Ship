@@ -35,6 +35,7 @@ static class DeploymentController
 	private const int DIR_BUTTONS_WIDTH = 47;
 
 	private const int TEXT_OFFSET = 5;
+
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
@@ -84,8 +85,9 @@ static class DeploymentController
 				_currentDirection = Direction.LeftRight;
 			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				GameController.HumanPlayer.RandomizeDeployment();
-			}
-		}
+			}			
+			} 
+			
 	}
 
 	/// <summary>
@@ -130,7 +132,7 @@ static class DeploymentController
 		UtilityFunctions.DrawField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer, true);
 		string strLR = string.Format ("ShipLR{0}", (int)_selectedShip);
 		string strUD = string.Format ("ShipUD{0}", (int)_selectedShip);
-
+		
 		//Draw the Left/Right and Up/Down buttons
 		if (_currentDirection == Direction.LeftRight) {
 			SwinGame.DrawBitmap(GameResources.GameImage("LeftRightButton"), LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP);
