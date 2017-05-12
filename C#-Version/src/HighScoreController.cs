@@ -78,7 +78,7 @@ static class HighScoreController
 			s.Value = Convert.ToInt32(line.Substring(NAME_WIDTH));
 			_scores.Add(s);
 		}
-		input.Close();
+			input.Close();
 	}
 
 	/// <summary>
@@ -117,7 +117,8 @@ static class HighScoreController
 
 		if (_scores.Count == 0)
 			LoadScores();
-
+		
+	 SwinGame.FillRectangle(Color.Black, 470, 30, 250, 450);
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
 		//For all of the scores
