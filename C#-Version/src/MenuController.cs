@@ -27,6 +27,7 @@ static class MenuController
 			"PLAY",
 			"SETUP",
 			"SCORES",
+			"INSTRUCTIONS"
 			"QUIT",
 			"FULLSC"
 		},
@@ -57,9 +58,10 @@ static class MenuController
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
-
-	private const int MAIN_MENU_QUIT_BUTTON = 3;
-	private const int MAIN_MENU_FULLSCREEN_BUTTON = 4;
+	private const int MAIN_MENU_INSTRUCTIONS_BUTTON = 3;
+	
+	private const int MAIN_MENU_QUIT_BUTTON = 4;
+	private const int MAIN_MENU_FULLSCREEN_BUTTON = 5;
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
